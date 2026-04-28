@@ -1,0 +1,181 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+  --background: #080706;
+  --foreground: #f4efe5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--background);
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.re4-nav {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, rgb(20 17 14 / 0.9), rgb(5 5 4 / 0.95) 14%, transparent 15%),
+    linear-gradient(180deg, rgb(179 170 142 / 0.5), rgb(74 78 67 / 0.92) 38%, rgb(37 36 30 / 0.98) 58%, rgb(164 154 124 / 0.38)),
+    repeating-linear-gradient(90deg, rgb(255 255 255 / 0.035) 0 1px, transparent 1px 9px);
+}
+
+.re4-nav::before,
+.re4-nav::after {
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  left: 0;
+  height: 3px;
+  content: "";
+}
+
+.re4-nav::before {
+  top: 5px;
+  background: linear-gradient(90deg, transparent, rgb(231 219 178 / 0.75), transparent);
+}
+
+.re4-nav::after {
+  bottom: 4px;
+  background: linear-gradient(90deg, transparent, rgb(0 0 0 / 0.88), transparent);
+}
+
+.re4-nav-item {
+  font-family: Georgia, "Times New Roman", serif;
+  text-shadow:
+    1px 1px 0 rgb(0 0 0 / 0.95),
+    -1px 1px 0 rgb(0 0 0 / 0.55);
+}
+
+.re4-nav-item::before {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  border-radius: 0.2rem;
+  background: radial-gradient(circle at 50% 20%, rgb(255 255 255 / 0.13), transparent 46%);
+  content: "";
+  opacity: 0;
+  transition: opacity 180ms ease;
+}
+
+.re4-nav-item:hover::before,
+.re4-nav-item:focus-visible::before {
+  opacity: 1;
+}
+
+.re4-nav-stud {
+  width: 0.68rem;
+  height: 0.68rem;
+  border: 1px solid rgb(16 14 11);
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 34% 30%, rgb(255 250 219), rgb(176 135 69) 28%, rgb(54 32 19) 62%, rgb(0 0 0) 100%);
+  box-shadow:
+    inset 0 0 0 1px rgb(245 197 97 / 0.28),
+    0 1px 2px rgb(0 0 0 / 0.95);
+}
+
+.re4-nav-label {
+  transform: skewX(-5deg);
+}
+
+.case-shell {
+  position: relative;
+}
+
+.case-shell::before {
+  pointer-events: none;
+  position: absolute;
+  inset: 0.55rem;
+  border: 1px solid rgb(245 197 97 / 0.08);
+  border-radius: 0.9rem;
+  content: "";
+}
+
+.inventory-grid {
+  background-image:
+    linear-gradient(rgb(245 197 97 / 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(245 197 97 / 0.08) 1px, transparent 1px),
+    radial-gradient(circle at 30% 15%, rgb(255 255 255 / 0.08), transparent 24%),
+    linear-gradient(135deg, rgb(68 64 60 / 0.75), rgb(12 10 9 / 0.96));
+  background-size:
+    calc(100% / 8) 4.6rem,
+    calc(100% / 8) 4.6rem,
+    100% 100%,
+    100% 100%;
+}
+
+.inventory-tile {
+  min-width: 0;
+}
+
+.inventory-tile::after {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background:
+    linear-gradient(90deg, transparent, rgb(255 255 255 / 0.08), transparent)
+      -120% 0 / 70% 100% no-repeat;
+  content: "";
+  opacity: 0;
+  transition:
+    background-position 450ms ease,
+    opacity 200ms ease;
+}
+
+.inventory-tile:hover::after {
+  background-position: 220% 0;
+  opacity: 1;
+}
+
+.inspect-preview {
+  background-image:
+    linear-gradient(rgb(245 197 97 / 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(245 197 97 / 0.08) 1px, transparent 1px),
+    radial-gradient(circle at center, rgb(245 197 97 / 0.18), transparent 58%);
+  background-size:
+    2rem 2rem,
+    2rem 2rem,
+    100% 100%;
+}
+
+@media (min-width: 1024px) {
+  .inventory-grid {
+    background-size:
+      calc(100% / 10) 5.3rem,
+      calc(100% / 10) 5.3rem,
+      100% 100%,
+      100% 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

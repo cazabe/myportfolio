@@ -1,0 +1,253 @@
+import type { InventorySection, InventoryTileData } from "@/types/inventory";
+
+export const sections: Array<{
+  id: InventorySection;
+  label: string;
+}> = [
+  { id: "projects", label: "Projects" },
+  { id: "about", label: "About Me" },
+  { id: "technologies", label: "Technologies" },
+  { id: "experience", label: "Work Experience" },
+  { id: "social", label: "Social" },
+];
+
+export const inventoryItems: InventoryTileData[] = [
+  {
+    id: "portfolio-case",
+    title: "Portfolio Case",
+    subtitle: "Next.js interactive UI",
+    section: "projects",
+    colSpan: 4,
+    rowSpan: 2,
+    tone: "gold",
+    imageLabel: "Attaché case portfolio",
+    description:
+      "A moody, grid-based personal portfolio that treats content like inventory items.",
+    details: [
+      "Built with Next.js App Router and composable React components.",
+      "Uses data-driven tiles so new projects and sections can be added without changing the layout code.",
+      "Designed around responsive inventory interactions, modal inspection, and persistent contact access.",
+    ],
+    technologies: ["Next.js", "React", "Tailwind", "TypeScript"],
+    href: "https://github.com/",
+    ctaLabel: "View repository",
+  },
+  {
+    id: "commerce-kit",
+    title: "Commerce Kit",
+    subtitle: "Product UI system",
+    section: "projects",
+    colSpan: 3,
+    rowSpan: 2,
+    tone: "green",
+    imageLabel: "Storefront dashboard",
+    description:
+      "Reusable product cards, checkout flows, and admin patterns for a modern storefront.",
+    details: [
+      "Focused on fast browsing, clean state management, and accessible forms.",
+      "Includes reusable UI primitives for catalog, cart, and account surfaces.",
+    ],
+    technologies: ["React", "Node", "Stripe", "Figma"],
+    href: "https://github.com/",
+    ctaLabel: "Open project",
+  },
+  {
+    id: "ops-dashboard",
+    title: "Ops Dashboard",
+    subtitle: "Realtime metrics",
+    section: "projects",
+    colSpan: 3,
+    rowSpan: 3,
+    tone: "steel",
+    imageLabel: "Analytics console",
+    description:
+      "A realtime dashboard concept for monitoring product health and team workflows.",
+    details: [
+      "Prioritizes scannable cards, alert states, and drill-down inspection patterns.",
+      "Uses chart-ready data structures and responsive panel layouts.",
+    ],
+    technologies: ["TypeScript", "WebSockets", "Charts", "Design Systems"],
+    href: "https://github.com/",
+    ctaLabel: "View case study",
+  },
+  {
+    id: "bio",
+    title: "Developer File",
+    subtitle: "Profile",
+    section: "about",
+    colSpan: 4,
+    rowSpan: 3,
+    tone: "gold",
+    description:
+      "I build front-end experiences that are polished, maintainable, and grounded in real product needs.",
+    details: [
+      "I enjoy turning rough ideas into interactive systems with clear structure and strong visual direction.",
+      "My work leans toward React, TypeScript, thoughtful component APIs, and interfaces that feel responsive to use.",
+      "Outside the editor, I like studying game UI, motion, and the small details that make software memorable.",
+    ],
+  },
+  {
+    id: "principles",
+    title: "Field Notes",
+    subtitle: "How I work",
+    section: "about",
+    colSpan: 3,
+    rowSpan: 2,
+    tone: "green",
+    description:
+      "A compact set of principles I bring to design and engineering work.",
+    details: [
+      "Start from user intent, then shape the component model around it.",
+      "Keep code readable enough that future changes feel calm.",
+      "Use motion, spacing, and contrast to clarify interaction instead of decorating it.",
+    ],
+  },
+  {
+    id: "react",
+    title: "React",
+    subtitle: "Advanced",
+    section: "technologies",
+    colSpan: 2,
+    rowSpan: 2,
+    tone: "blue",
+    description:
+      "Component architecture, stateful interfaces, hooks, and performance-minded UI composition.",
+    details: ["Comfortable building reusable systems and complex interactive screens."],
+  },
+  {
+    id: "next",
+    title: "Next.js",
+    subtitle: "Advanced",
+    section: "technologies",
+    colSpan: 2,
+    rowSpan: 2,
+    tone: "steel",
+    description:
+      "App Router, server/client component boundaries, routing, metadata, and production builds.",
+    details: ["Used here as the foundation for the attaché case portfolio."],
+  },
+  {
+    id: "typescript",
+    title: "TypeScript",
+    subtitle: "Strong",
+    section: "technologies",
+    colSpan: 3,
+    rowSpan: 1,
+    tone: "gold",
+    description:
+      "Typed data models, safer UI contracts, and clearer component interfaces.",
+    details: ["This project drives every inventory tile from typed constants."],
+  },
+  {
+    id: "tailwind",
+    title: "Tailwind",
+    subtitle: "Strong",
+    section: "technologies",
+    colSpan: 2,
+    rowSpan: 2,
+    tone: "green",
+    description:
+      "Utility-first styling for fast iteration, responsive layouts, and consistent visual language.",
+    details: ["Used as the primary styling method with a small amount of CSS for the case texture."],
+  },
+  {
+    id: "figma",
+    title: "Figma",
+    subtitle: "Product UI",
+    section: "technologies",
+    colSpan: 2,
+    rowSpan: 1,
+    tone: "purple",
+    description:
+      "Wireframes, interface systems, prototypes, and visual polish before implementation.",
+    details: ["Useful for translating game-inspired references into usable web interfaces."],
+  },
+  {
+    id: "frontend-role",
+    title: "Frontend Developer",
+    subtitle: "Product interfaces",
+    section: "experience",
+    colSpan: 4,
+    rowSpan: 2,
+    tone: "gold",
+    description:
+      "Built responsive interfaces and reusable components for user-facing web products.",
+    details: [
+      "Owned component implementation from design handoff through production polish.",
+      "Collaborated with product and backend teammates to refine interaction details.",
+      "Improved UI consistency through shared patterns and typed component props.",
+    ],
+  },
+  {
+    id: "freelance-role",
+    title: "Freelance Builder",
+    subtitle: "Web apps and sites",
+    section: "experience",
+    colSpan: 3,
+    rowSpan: 2,
+    tone: "green",
+    description:
+      "Delivered focused websites and app prototypes for small businesses and personal brands.",
+    details: [
+      "Balanced visual identity, speed, and maintainability.",
+      "Turned vague goals into concrete pages, flows, and launch-ready interfaces.",
+    ],
+  },
+  {
+    id: "github",
+    title: "GitHub",
+    subtitle: "Code vault",
+    section: "social",
+    colSpan: 3,
+    rowSpan: 2,
+    tone: "steel",
+    description: "Browse repositories, experiments, and source code.",
+    details: ["Replace this placeholder with your real GitHub profile URL."],
+    href: "https://github.com/",
+    ctaLabel: "Open GitHub",
+  },
+  {
+    id: "linkedin",
+    title: "LinkedIn",
+    subtitle: "Professional log",
+    section: "social",
+    colSpan: 3,
+    rowSpan: 2,
+    tone: "blue",
+    description: "Connect for work history, collaboration, and professional updates.",
+    details: ["Replace this placeholder with your real LinkedIn profile URL."],
+    href: "https://www.linkedin.com/",
+    ctaLabel: "Open LinkedIn",
+  },
+  {
+    id: "twitter",
+    title: "Twitter/X",
+    subtitle: "Signal feed",
+    section: "social",
+    colSpan: 2,
+    rowSpan: 2,
+    tone: "purple",
+    description: "A place for quick thoughts, updates, and design/dev notes.",
+    details: ["Replace this placeholder with your preferred social link."],
+    href: "https://x.com/",
+    ctaLabel: "Open profile",
+  },
+];
+
+export const inkRibbon: InventoryTileData = {
+  id: "ink-ribbon",
+  title: "Ink Ribbon",
+  subtitle: "Contact",
+  section: "contact",
+  colSpan: 2,
+  rowSpan: 1,
+  tone: "red",
+  description:
+    "Use the ink ribbon to save your progress and send a message.",
+  details: [
+    "Open to collaborations, front-end roles, portfolio feedback, and product UI work.",
+    "Email: hello@example.com",
+  ],
+  href: "mailto:hello@example.com",
+  ctaLabel: "Write email",
+};
