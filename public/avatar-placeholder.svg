@@ -1,21 +1,30 @@
 <svg width="720" height="960" viewBox="0 0 720 960" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="720" height="960" fill="#0D0B09"/>
-  <path d="M0 0H720V960H0V0Z" fill="url(#bg)"/>
-  <circle cx="360" cy="278" r="108" fill="#D6D0C4"/>
-  <path d="M234 672C250 515 286 424 360 424C434 424 470 515 486 672H234Z" fill="#171717"/>
-  <path d="M241 468C273 430 312 411 360 411C408 411 447 430 479 468L438 838H282L241 468Z" fill="#22201D"/>
-  <path d="M300 438L360 520L420 438L448 502L390 615H330L272 502L300 438Z" fill="#3F3A33"/>
-  <path d="M170 846H550V960H170V846Z" fill="#111111"/>
-  <path d="M234 236C252 138 319 94 413 132C474 157 510 218 497 287C459 225 387 210 294 240L234 236Z" fill="#BFB7AA"/>
-  <path d="M206 722H514" stroke="#B99A55" stroke-width="6" stroke-linecap="round"/>
-  <path d="M286 624H434" stroke="#565049" stroke-width="5" stroke-linecap="round"/>
-  <path d="M252 760H468" stroke="#2F2B27" stroke-width="4" stroke-linecap="round"/>
-  <rect x="82" y="74" width="556" height="812" rx="22" stroke="#6B6258" stroke-width="8" stroke-dasharray="18 18"/>
+  <g filter="url(#shadow)">
+    <path d="M312 430C274 445 241 486 222 553L177 712C168 745 188 778 222 783C254 788 282 768 290 737L326 600L312 430Z" fill="#121211"/>
+    <path d="M430 428C477 442 520 480 547 533L633 700C650 733 637 772 606 786C574 801 537 786 520 753L450 620L430 428Z" fill="#161615"/>
+    <path d="M462 473L555 425L582 479L488 529L462 473Z" fill="#1C1C1B"/>
+    <path d="M536 404L647 351C664 343 684 350 692 367C700 384 693 403 676 412L565 466L536 404Z" fill="#10100F"/>
+    <path d="M639 337L685 315L708 361L662 383L639 337Z" fill="#181817"/>
+    <path d="M273 408C300 382 335 369 377 369C421 369 456 384 482 413L458 872H290L273 408Z" fill="#1A1A19"/>
+    <path d="M300 431L377 528L454 431L482 504L414 641H340L272 504L300 431Z" fill="#3C3933"/>
+    <path d="M313 451H441L425 873H329L313 451Z" fill="#20201F"/>
+    <path d="M246 842H512L535 960H219L246 842Z" fill="#10100F"/>
+    <path d="M304 615H452" stroke="#5D574D" stroke-width="8" stroke-linecap="round"/>
+    <path d="M296 698H458" stroke="#2F2D29" stroke-width="7" stroke-linecap="round"/>
+    <path d="M324 258C321 328 358 381 411 374C465 367 499 306 488 236C477 167 433 125 380 132C327 139 307 189 324 258Z" fill="#D8D0C2"/>
+    <path d="M303 232C307 145 361 97 441 118C507 136 541 199 520 272C481 211 407 196 319 236L303 232Z" fill="#C9C0B1"/>
+    <path d="M327 257C370 225 420 216 486 228C476 177 440 145 392 145C343 145 310 185 327 257Z" fill="#B4AA9B"/>
+    <path d="M339 288C366 304 406 306 446 289" stroke="#6B6258" stroke-width="7" stroke-linecap="round"/>
+    <path d="M328 406L262 466L287 515L356 461L328 406Z" fill="#242320"/>
+    <path d="M430 403L484 461L455 511L393 461L430 403Z" fill="#242320"/>
+    <path d="M275 420L215 452L256 525L315 491L275 420Z" fill="#171716"/>
+    <path d="M466 417L526 448L489 524L431 491L466 417Z" fill="#171716"/>
+    <path d="M302 418L235 442" stroke="#70685A" stroke-width="5" stroke-linecap="round"/>
+    <path d="M444 418L507 444" stroke="#70685A" stroke-width="5" stroke-linecap="round"/>
+  </g>
   <defs>
-    <radialGradient id="bg" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(354 314) rotate(90) scale(646 484)">
-      <stop stop-color="#514A3F"/>
-      <stop offset="0.48" stop-color="#1C1916"/>
-      <stop offset="1" stop-color="#080706"/>
-    </radialGradient>
+    <filter id="shadow" x="136" y="88" width="600" height="900" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="-20" dy="18" stdDeviation="18" flood-color="#000000" flood-opacity="0.72"/>
+    </filter>
   </defs>
 </svg>

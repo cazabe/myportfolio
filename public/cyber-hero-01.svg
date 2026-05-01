@@ -1,0 +1,45 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1000" fill="#08002A"/>
+  <path d="M0 0H1600V1000H0V0Z" fill="url(#night)"/>
+  <circle cx="1110" cy="580" r="430" fill="#FF2BD6" opacity=".16"/>
+  <circle cx="920" cy="430" r="300" fill="#20F7FF" opacity=".16"/>
+  <path d="M0 690C280 604 480 635 700 584C960 524 1190 404 1600 455V1000H0V690Z" fill="url(#reflection)"/>
+  <g filter="url(#glow)">
+    <rect x="705" y="300" width="70" height="360" fill="#120B42" stroke="#20F7FF" stroke-width="4"/>
+    <rect x="800" y="210" width="105" height="500" fill="#130A37" stroke="#FF2BD6" stroke-width="5"/>
+    <rect x="935" y="110" width="120" height="610" fill="#160D4A" stroke="#20F7FF" stroke-width="4"/>
+    <rect x="1098" y="255" width="160" height="465" fill="#0B0A28" stroke="#FF2BD6" stroke-width="5"/>
+    <rect x="1295" y="185" width="95" height="535" fill="#11123C" stroke="#20F7FF" stroke-width="4"/>
+    <path d="M615 640H1460" stroke="#FF2BD6" stroke-width="16" opacity=".75"/>
+    <path d="M650 690H1510" stroke="#20F7FF" stroke-width="6" opacity=".72"/>
+    <path d="M780 365H878M820 425H885M955 190H1035M955 260H1035M1130 335H1224M1130 405H1224M1315 245H1376M1315 315H1376" stroke="#F8FAFC" stroke-opacity=".55" stroke-width="8"/>
+    <path d="M585 730C828 692 1024 712 1515 675" stroke="#FF8A2B" stroke-width="5" opacity=".8"/>
+  </g>
+  <path d="M0 0H670V1000H0V0Z" fill="url(#menuShade)"/>
+  <path d="M790 810H1495M830 858H1405M720 903H1560" stroke="#FF2BD6" stroke-opacity=".42" stroke-width="4"/>
+  <defs>
+    <linearGradient id="night" x1="800" y1="0" x2="800" y2="1000">
+      <stop stop-color="#12084C"/>
+      <stop offset=".42" stop-color="#28106B"/>
+      <stop offset=".72" stop-color="#49105E"/>
+      <stop offset="1" stop-color="#070013"/>
+    </linearGradient>
+    <linearGradient id="reflection" x1="800" y1="460" x2="800" y2="1000">
+      <stop stop-color="#FF2BD6" stop-opacity=".32"/>
+      <stop offset=".34" stop-color="#20F7FF" stop-opacity=".2"/>
+      <stop offset="1" stop-color="#050018"/>
+    </linearGradient>
+    <linearGradient id="menuShade" x1="0" y1="500" x2="670" y2="500">
+      <stop stop-color="#000"/>
+      <stop offset=".72" stop-color="#050018" stop-opacity=".94"/>
+      <stop offset="1" stop-color="#050018" stop-opacity=".22"/>
+    </linearGradient>
+    <filter id="glow" x="540" y="60" width="1010" height="720" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+</svg>

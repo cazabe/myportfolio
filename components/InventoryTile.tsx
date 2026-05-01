@@ -19,7 +19,7 @@ export default function InventoryTile({ item, onInspect }: InventoryTileProps) {
     <button
       type="button"
       onClick={() => onInspect(item)}
-      className={`inventory-tile group relative isolate flex min-h-20 flex-col justify-between overflow-hidden rounded-lg border border-black/70 bg-linear-to-br p-3 text-left shadow-[inset_0_1px_0_rgba(255,255,255,0.16),0_10px_18px_rgba(0,0,0,0.42)] ring-1 transition duration-200 hover:-translate-y-0.5 hover:rotate-[-0.35deg] hover:border-amber-200/80 hover:shadow-[0_0_22px_rgba(245,197,97,0.22),0_12px_20px_rgba(0,0,0,0.5)] focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-200 ${toneClasses[item.tone]}`}
+      className={`inventory-tile group relative isolate flex min-h-0 flex-col justify-between overflow-hidden rounded-md border border-black/70 bg-linear-to-br p-2 text-left shadow-[inset_0_1px_0_rgba(255,255,255,0.16),0_10px_18px_rgba(0,0,0,0.42)] ring-1 transition duration-200 hover:-translate-y-0.5 hover:rotate-[-0.35deg] hover:border-amber-200/80 hover:shadow-[0_0_22px_rgba(245,197,97,0.22),0_12px_20px_rgba(0,0,0,0.5)] focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-200 sm:p-3 ${toneClasses[item.tone]}`}
       style={{
         gridColumn: `span ${item.colSpan} / span ${item.colSpan}`,
         gridRow: `span ${item.rowSpan} / span ${item.rowSpan}`,
@@ -27,18 +27,18 @@ export default function InventoryTile({ item, onInspect }: InventoryTileProps) {
       aria-label={`Inspect ${item.title}`}
     >
       <span className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_15%,rgba(255,255,255,0.18),transparent_28%),linear-gradient(135deg,rgba(255,255,255,0.06),transparent_35%)] opacity-80" />
-      <span className="text-[10px] font-bold uppercase tracking-[0.28em] text-white/45">
+      <span className="text-[0.55rem] font-bold uppercase tracking-[0.22em] text-white/45">
         {item.section === "contact" ? "Always Equipped" : item.section}
       </span>
       <span>
-        <span className="block text-base font-black uppercase tracking-wide sm:text-lg">
+        <span className="block text-sm font-black uppercase tracking-wide sm:text-base">
           {item.title}
         </span>
-        <span className="mt-1 block text-xs font-medium text-white/62">
+        <span className="mt-0.5 block text-[0.65rem] font-medium text-white/62 sm:text-xs">
           {item.subtitle}
         </span>
       </span>
-      <span className="mt-3 inline-flex w-fit items-center rounded-full border border-white/15 bg-black/20 px-2 py-1 text-[10px] uppercase tracking-[0.2em] text-white/55 transition group-hover:border-amber-200/60 group-hover:text-amber-100">
+      <span className="mt-2 inline-flex w-fit items-center rounded-full border border-white/15 bg-black/20 px-2 py-1 text-[0.55rem] uppercase tracking-[0.18em] text-white/55 transition group-hover:border-amber-200/60 group-hover:text-amber-100">
         Examine
       </span>
     </button>

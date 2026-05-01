@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Carlos Zavala | Attaché Case Portfolio",
+  title: "Carlos Zavala | Cyberpunk Portfolio",
   description:
-    "A developer portfolio inspired by the Resident Evil 4 inventory system.",
+    "A cyberpunk video game main menu inspired developer portfolio.",
 };
 
 export default function RootLayout({

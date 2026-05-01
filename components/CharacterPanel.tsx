@@ -2,42 +2,43 @@ import Image from "next/image";
 
 export default function CharacterPanel() {
   return (
-    <aside className="rounded-2xl border border-stone-700/80 bg-linear-to-b from-stone-900 via-neutral-950 to-black p-4 shadow-[inset_0_0_35px_rgba(0,0,0,0.85),0_20px_60px_rgba(0,0,0,0.35)]">
-      <div className="mb-3 flex items-center justify-between border-b border-amber-200/20 pb-3">
-        <span className="text-xs font-bold uppercase tracking-[0.3em] text-amber-100/70">
-          Operator
-        </span>
-        <span className="font-mono text-sm text-stone-300">515370 PTAS</span>
+    <aside className="re4-character-panel relative min-h-136 overflow-hidden rounded-2xl border border-stone-950/90 shadow-[0_20px_60px_rgba(0,0,0,0.45)]">
+      <div className="re4-ptas absolute right-4 top-3 z-20 font-serif text-2xl font-black italic tracking-[0.08em] text-stone-200">
+        99669999 <span className="text-sm">PTAS</span>
       </div>
 
-      <div className="relative overflow-hidden rounded-xl border border-stone-700 bg-stone-950">
+      <div className="re4-character-arch absolute inset-y-8 -left-12 w-56 rounded-full" />
+      <div className="re4-character-backdrop absolute inset-0" />
+
+      <div className="absolute inset-x-5 bottom-24 top-16 z-10">
         <Image
           src="/avatar-placeholder.svg"
           alt="Stylized developer avatar placeholder"
           width={720}
           height={960}
           priority
-          className="aspect-3/4 w-full object-cover"
+          className="re4-character-image h-full w-full object-contain object-bottom"
         />
-        <div className="absolute inset-x-0 bottom-0 bg-linear-to-t from-black via-black/60 to-transparent p-4">
-          <p className="text-lg font-black uppercase tracking-[0.18em] text-stone-50">
-            Carlos Z.
-          </p>
-          <p className="text-xs uppercase tracking-[0.24em] text-amber-100/75">
-            Frontend Developer
-          </p>
-        </div>
       </div>
 
-      <div className="mt-4 grid grid-cols-2 gap-2 text-xs uppercase tracking-[0.18em] text-stone-300">
-        <div className="rounded border border-stone-700 bg-black/25 p-3">
-          <span className="block text-stone-500">Status</span>
-          Ready
+      <div className="absolute bottom-10 right-5 z-20 flex items-end gap-2">
+        <div className="re4-health-ring grid h-24 w-24 place-items-center rounded-full">
+          <div className="re4-health-screen grid h-16 w-16 place-items-center rounded-full text-center font-mono text-2xl text-cyan-100">
+            250
+          </div>
         </div>
-        <div className="rounded border border-stone-700 bg-black/25 p-3">
-          <span className="block text-stone-500">Mode</span>
-          Inspect
-        </div>
+        <span className="mb-1 font-serif text-2xl italic text-stone-300 drop-shadow-[2px_2px_0_rgba(0,0,0,0.85)]">
+          Carlos
+        </span>
+      </div>
+
+      <div className="re4-command-rail absolute inset-x-0 bottom-0 z-30 flex min-h-12 items-center gap-3 px-5">
+        <span className="grid h-7 w-7 place-items-center rounded-full border border-stone-900 bg-stone-800 font-serif text-lg font-black text-stone-200 shadow-[inset_0_1px_0_rgba(255,255,255,0.25)]">
+          2
+        </span>
+        <span className="font-serif text-xl font-black italic tracking-[0.14em] text-stone-200 drop-shadow-[2px_2px_0_rgba(0,0,0,0.9)]">
+          Move selection
+        </span>
       </div>
     </aside>
   );

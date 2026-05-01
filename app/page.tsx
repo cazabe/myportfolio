@@ -1,5 +1,5 @@
-import InventoryExperience from "@/components/InventoryExperience";
+import CyberpunkPortfolio from "@/components/CyberpunkPortfolio";
 
 export default function Home() {
-  return <InventoryExperience />;
+  return <CyberpunkPortfolio />;
 }
