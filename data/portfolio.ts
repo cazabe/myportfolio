@@ -62,18 +62,66 @@ export const projects = [
 ];
 
 export const technologies = [
-  "React",
-  "Next.js",
-  "TypeScript",
-  "Tailwind CSS",
-  "Node.js",
-  "PostgreSQL",
-  "Figma",
-  "Git",
-  "REST APIs",
-  "UI Systems",
-  "Accessibility",
-  "Performance",
+  {
+    name: "TypeScript",
+    alias: "TS",
+    role: "The Type System",
+    palette: "violet",
+  },
+  {
+    name: "JavaScript",
+    alias: "JS",
+    role: "The Runtime",
+    palette: "orange",
+  },
+  {
+    name: "React",
+    alias: "RX",
+    role: "The Interface",
+    palette: "cyan",
+  },
+  {
+    name: "Next.js",
+    alias: "NX",
+    role: "The Framework",
+    palette: "red",
+  },
+  {
+    name: "Node.js",
+    alias: "ND",
+    role: "The Server",
+    palette: "green",
+  },
+  {
+    name: "PostgreSQL",
+    alias: "PG",
+    role: "The Database",
+    palette: "blue",
+  },
+  {
+    name: "Tailwind",
+    alias: "TW",
+    role: "The Stylist",
+    palette: "cyan",
+  },
+  {
+    name: "Git",
+    alias: "GT",
+    role: "The Timeline",
+    palette: "orange",
+  },
+  {
+    name: "Flutter",
+    alias: "FL",
+    role: "The Mobile Kit",
+    palette: "blue",
+  },
+  {
+    name: "C#",
+    alias: "C#",
+    role: "The App Core",
+    palette: "red",
+  },
 ];
 
 export const experience = [

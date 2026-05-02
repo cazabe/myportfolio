@@ -17,30 +17,32 @@ export default function CyberpunkPortfolio() {
   const activeSlide = 0;
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visibleEntry = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+    const updateActiveSection = () => {
+      const checkpoint = window.scrollY + window.innerHeight * 0.38;
+      const currentSection = portfolioSections.reduce<PortfolioSectionId>(
+        (current, section) => {
+          const element = document.getElementById(section.id);
 
-        if (visibleEntry?.target.id) {
-          setActiveSection(visibleEntry.target.id as PortfolioSectionId);
-        }
-      },
-      {
-        rootMargin: "-35% 0px -45% 0px",
-        threshold: [0.15, 0.35, 0.6],
-      },
-    );
+          if (!element) {
+            return current;
+          }
 
-    portfolioSections.forEach((section) => {
-      const element = document.getElementById(section.id);
-      if (element) {
-        observer.observe(element);
-      }
-    });
+          return element.offsetTop <= checkpoint ? section.id : current;
+        },
+        "home",
+      );
 
-    return () => observer.disconnect();
+      setActiveSection(currentSection);
+    };
+
+    updateActiveSection();
+    window.addEventListener("scroll", updateActiveSection, { passive: true });
+    window.addEventListener("resize", updateActiveSection);
+
+    return () => {
+      window.removeEventListener("scroll", updateActiveSection);
+      window.removeEventListener("resize", updateActiveSection);
+    };
   }, []);
 
   const activeIndex = portfolioSections.findIndex(
@@ -131,7 +133,7 @@ function SideMenu({ activeSection }: { activeSection: PortfolioSectionId }) {
             <a
               key={section.id}
               href={`#${section.id}`}
-              className={`menu-option group relative block py-2 pl-5 text-sm font-black uppercase tracking-[0.2em] transition ${
+              className={`menu-option group relative block px-5 py-2 text-sm font-black uppercase tracking-[0.2em] transition ${
                 isActive ? "active text-black" : "text-black/55 hover:text-black"
               }`}
             >
@@ -203,43 +205,46 @@ function ProjectsSection() {
       title="Projects"
       description="Selected builds presented as active missions in the portfolio mainframe."
     >
-      <div className="project-showcase">
-        {projects.map((project, index) => (
-          <article
-            key={project.title}
-            className={`project-collage-card project-card-${index + 1}`}
-          >
-            <div
-              className="project-image"
-              style={{ backgroundImage: `url(${project.image})` }}
-              aria-label={`${project.title} preview`}
-              role="img"
-            />
-            <div className="project-copy">
-              <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
-                <p className="text-xs font-black uppercase tracking-[0.28em] text-black/55">
-                  {project.type}
-                </p>
-                <span className="project-size-badge">
-                  Size {index === 0 ? "XL" : index === 1 ? "M" : "L"}
-                </span>
-              </div>
-              <h3 className="text-3xl font-black uppercase leading-none tracking-[0.04em] text-black sm:text-4xl">
-                {project.title}
-              </h3>
-              <p className="mt-4 max-w-xl text-sm font-semibold leading-6 text-black/62">
-                {project.description}
-              </p>
-              <div className="mt-5 flex flex-wrap gap-2">
-                {project.stack.map((tool) => (
-                  <span key={tool} className="project-dot-pill">
-                    {tool}
+      <div className="project-stage">
+        <div className="project-section-character" aria-hidden="true" />
+        <div className="project-showcase">
+          {projects.map((project, index) => (
+            <article
+              key={project.title}
+              className={`project-collage-card project-card-${index + 1}`}
+            >
+              <div
+                className="project-image"
+                style={{ backgroundImage: `url(${project.image})` }}
+                aria-label={`${project.title} preview`}
+                role="img"
+              />
+              <div className="project-copy">
+                <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+                  <p className="text-xs font-black uppercase tracking-[0.28em] text-black/55">
+                    {project.type}
+                  </p>
+                  <span className="project-size-badge">
+                    Size {index === 0 ? "XL" : index === 1 ? "M" : "L"}
                   </span>
-                ))}
+                </div>
+                <h3 className="text-3xl font-black uppercase leading-none tracking-[0.04em] text-black sm:text-4xl">
+                  {project.title}
+                </h3>
+                <p className="mt-4 max-w-xl text-sm font-semibold leading-6 text-black/62">
+                  {project.description}
+                </p>
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {project.stack.map((tool) => (
+                    <span key={tool} className="project-dot-pill">
+                      {tool}
+                    </span>
+                  ))}
+                </div>
               </div>
-            </div>
-          </article>
-        ))}
+            </article>
+          ))}
+        </div>
       </div>
     </ContentSection>
   );
@@ -253,38 +258,35 @@ function AboutSection() {
       title="About Me"
       description="A developer profile tuned for product interfaces, technical clarity, and memorable interaction design."
     >
-      <div className="grid gap-5 lg:grid-cols-[1.2fr_0.8fr]">
-        <div className="cyber-card p-7">
-          <p className="text-lg leading-8 text-zinc-200">
+      <div className="about-board">
+        <div className="about-image" aria-hidden="true" />
+        <div className="about-content">
+          <p className="text-xs font-black uppercase tracking-[0.32em] text-black/55">
+            Digital Profile
+          </p>
+          <h3 className="mt-4 max-w-4xl text-4xl font-black leading-[0.95] tracking-tight text-black sm:text-6xl">
+            Full stack developer crafting product interfaces with cinematic UI
+            instincts and reliable engineering.
+          </h3>
+          <p className="mt-7 max-w-md text-sm font-semibold leading-6 text-black/58">
             I build front-end and full-stack experiences that feel intentional:
-            fast to use, clear to maintain, and visually distinct. My work
-            blends React, TypeScript, UI systems, and product thinking with an
-            eye for atmosphere.
+            fast to use, clear to maintain, and visually distinct.
           </p>
-          <p className="mt-5 text-lg leading-8 text-zinc-300">
-            I like interfaces that tell users where they are, what matters, and
-            what action comes next. Game UI, cinematic menus, and tactile
-            software details are a big part of how I think about interaction.
-          </p>
-        </div>
-        <div className="cyber-card p-7">
-          <p className="text-xs font-black uppercase tracking-[0.35em] text-red-500">
-            Current Stats
-          </p>
-          <dl className="mt-6 space-y-5">
+
+          <div className="about-feature-grid">
             {[
-              ["Focus", "Full Stack UI"],
-              ["Style", "Cyberpunk Systems"],
-              ["Mode", "Available"],
-            ].map(([label, value]) => (
-              <div key={label} className="flex items-center justify-between gap-4">
-                <dt className="text-sm uppercase tracking-[0.25em] text-zinc-500">
-                  {label}
-                </dt>
-                <dd className="font-black uppercase text-white">{value}</dd>
-              </div>
+              ["Product UI", "Reusable components and clear interaction flows."],
+              ["Full Stack", "Typed frontends connected to practical backend APIs."],
+              ["Visual Systems", "Game-inspired layouts, motion, and hierarchy."],
+              ["Reliable Build", "Maintainable code that is ready to evolve."],
+            ].map(([label, text]) => (
+              <article key={label} className="about-feature">
+                <span aria-hidden="true" />
+                <h4>{label}</h4>
+                <p>{text}</p>
+              </article>
             ))}
-          </dl>
+          </div>
         </div>
       </div>
     </ContentSection>
@@ -296,15 +298,30 @@ function TechnologiesSection() {
     <ContentSection
       id="technologies"
       eyebrow="Level 04 / Loadout"
-      title="Technologies"
-      description="A compact view of the tools, frameworks, and practices in the active kit."
+      title="Languages"
+      description="A collectible-card lineup of the programming languages, frameworks, and tools in my active loadout."
     >
-      <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 xl:grid-cols-4">
-        {technologies.map((technology) => (
-          <div key={technology} className="tech-tile">
-            {technology}
-          </div>
-        ))}
+      <div className="tech-stage">
+        <div className="tech-section-character" aria-hidden="true" />
+        <div className="tech-card-grid">
+          {technologies.map((technology, index) => (
+            <article
+              key={technology.name}
+              className={`tech-card tech-card-${technology.palette}`}
+            >
+              <div className="tech-card-art" aria-hidden="true">
+                <span>{technology.alias}</span>
+              </div>
+              <div className="tech-card-copy">
+                <h3>{technology.name}</h3>
+                <p>{technology.role}</p>
+              </div>
+              <span className="tech-card-index">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+            </article>
+          ))}
+        </div>
       </div>
     </ContentSection>
   );
