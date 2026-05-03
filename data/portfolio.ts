@@ -23,7 +23,7 @@ export const heroSlides: Array<{
   src: string;
   position: string;
 }> = [
-  { src: "/hero-character-transparent.png", position: "center" },
+  { src: "/hero-character-red-jacket-transparent.png", position: "center" },
 ];
 
 export const projects = [
