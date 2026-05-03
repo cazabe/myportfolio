@@ -328,6 +328,9 @@ function TechnologiesSection() {
 }
 
 function ExperienceSection() {
+  const [selectedExperienceIndex, setSelectedExperienceIndex] = useState(0);
+  const selectedExperience = experience[selectedExperienceIndex];
+
   return (
     <ContentSection
       id="experience"
@@ -335,31 +338,56 @@ function ExperienceSection() {
       title="Work Experience"
       description="Roles and responsibilities logged as completed quests."
     >
-      <div className="space-y-5">
-        {experience.map((item) => (
-          <article key={item.role} className="cyber-card p-6">
-            <div className="flex flex-wrap items-start justify-between gap-3">
-              <div>
-                <p className="text-xs font-black uppercase tracking-[0.32em] text-red-500">
-                  {item.period}
-                </p>
-                <h3 className="mt-3 text-2xl font-black uppercase tracking-[0.08em]">
-                  {item.role}
-                </h3>
-              </div>
-              <span className="neon-chip">Active Record</span>
-            </div>
-            <p className="mt-4 leading-7 text-zinc-300">{item.description}</p>
-            <ul className="mt-5 space-y-3 text-zinc-300">
-              {item.bullets.map((bullet) => (
+      <div className="experience-console">
+        <article className="experience-detail">
+          <div className="experience-art" aria-hidden="true" />
+          <div className="experience-detail-copy">
+            <p className="text-xs font-black uppercase tracking-[0.32em] text-red-500">
+              {selectedExperience.period}
+            </p>
+            <h3 className="experience-detail-title mt-4 text-4xl font-black uppercase leading-none tracking-[0.04em] text-white sm:text-6xl">
+              {selectedExperience.role}
+            </h3>
+            <p className="mt-5 max-w-xl text-sm font-semibold leading-7 text-zinc-300">
+              {selectedExperience.description}
+            </p>
+            <ul className="mt-7 grid gap-3 text-sm font-semibold text-zinc-300">
+              {selectedExperience.bullets.map((bullet) => (
                 <li key={bullet} className="flex gap-3">
-                  <span className="mt-2 h-2 w-2 shrink-0 bg-red-500" />
+                  <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-red-500" />
                   <span>{bullet}</span>
                 </li>
               ))}
             </ul>
-          </article>
-        ))}
+          </div>
+        </article>
+
+        <div className="experience-card-stack" aria-label="Work experience options">
+          {experience.map((item, index) => {
+            const isSelected = selectedExperienceIndex === index;
+
+            return (
+              <button
+                key={item.role}
+                type="button"
+                className={`experience-select-card ${
+                  isSelected ? "selected" : ""
+                }`}
+                onClick={() => setSelectedExperienceIndex(index)}
+                aria-pressed={isSelected}
+              >
+                <span className="experience-card-kicker">{item.period}</span>
+                <span className="experience-card-title">{item.role}</span>
+                <span className="experience-card-description">
+                  {item.description}
+                </span>
+                <span className="experience-card-number">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+              </button>
+            );
+          })}
+        </div>
       </div>
     </ContentSection>
   );
@@ -373,22 +401,31 @@ function SocialsSection() {
       title="Socials"
       description="Open a channel, inspect the source, or send a message."
     >
-      <div className="grid gap-4 sm:grid-cols-2">
-        {socials.map((social) => (
+      <div className="social-poster-grid">
+        {socials.map((social, index) => (
           <a
             key={social.label}
             href={social.href}
             target={social.href.startsWith("mailto:") ? undefined : "_blank"}
             rel={social.href.startsWith("mailto:") ? undefined : "noreferrer"}
-            className="cyber-card group block p-6"
+            className={`social-poster social-poster-${index + 1}`}
           >
-            <p className="text-xs font-black uppercase tracking-[0.32em] text-zinc-500">
-              Channel
-            </p>
-            <h3 className="mt-3 text-2xl font-black uppercase tracking-[0.12em] text-white group-hover:text-red-400">
+            <div className="social-poster-top">
+              <span>LOGO HERE</span>
+              <span>#{social.label.toUpperCase()}</span>
+            </div>
+            <h3>
               {social.label}
             </h3>
-            <p className="mt-3 text-red-300">{social.handle}</p>
+            <div className="social-character" aria-hidden="true" />
+            <div className="social-poster-panel">
+              <p>{social.tagline}</p>
+              <span>{social.handle}</span>
+            </div>
+            <div className="social-poster-footer">
+              <span>ACCESS LINK</span>
+              <span />
+            </div>
           </a>
         ))}
       </div>

@@ -146,11 +146,36 @@ export const experience = [
       "Balance visual identity, performance, and maintainability.",
     ],
   },
+  {
+    role: "Full Stack Developer",
+    period: "System Expansion",
+    description:
+      "Connect polished client experiences with practical backend services, data models, and deployment workflows.",
+    bullets: [
+      "Build end-to-end features that move cleanly from interface state to API behavior.",
+      "Design data flows that keep product screens fast, predictable, and easy to debug.",
+      "Ship maintainable releases with attention to accessibility, performance, and reliability.",
+    ],
+  },
 ];
 
 export const socials = [
-  { label: "GitHub", handle: "@your-github", href: "https://github.com/" },
-  { label: "LinkedIn", handle: "/in/your-profile", href: "https://www.linkedin.com/" },
-  { label: "Twitter / X", handle: "@your-handle", href: "https://x.com/" },
-  { label: "Email", handle: "hello@example.com", href: "mailto:hello@example.com" },
+  {
+    label: "LinkedIn",
+    handle: "/in/your-profile",
+    href: "https://www.linkedin.com/",
+    tagline: "Professional network and career signal.",
+  },
+  {
+    label: "Instagram",
+    handle: "@your-instagram",
+    href: "https://www.instagram.com/",
+    tagline: "Visual updates, process, and side quests.",
+  },
+  {
+    label: "GitHub",
+    handle: "@your-github",
+    href: "https://github.com/",
+    tagline: "Code vault, experiments, and repositories.",
+  },
 ];

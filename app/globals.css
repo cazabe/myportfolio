@@ -734,6 +734,436 @@ a {
   --card-deep: #05070d;
 }
 
+.experience-console {
+  display: grid;
+  gap: 1.5rem;
+  overflow: hidden;
+  border-radius: 2.2rem;
+  background: #05070d;
+  padding: clamp(1rem, 2.5vw, 1.5rem);
+  box-shadow:
+    0 1.5rem 3rem rgb(0 0 0 / 0.22),
+    inset 0 0 0 1px rgb(255 255 255 / 0.06);
+}
+
+.experience-detail {
+  position: relative;
+  min-height: 34rem;
+  overflow: hidden;
+  border-radius: 1.8rem;
+  background:
+    radial-gradient(circle at 18% 62%, rgb(239 35 55 / 0.3), transparent 16rem),
+    linear-gradient(135deg, #080a10 0%, #11131a 58%, #05070d 100%);
+}
+
+.experience-detail::before {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, transparent 0 30%, rgb(5 7 13 / 0.94) 54%),
+    repeating-linear-gradient(90deg, rgb(255 255 255 / 0.05) 0 1px, transparent 1px 18px);
+  content: "";
+}
+
+.experience-art {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: min(44rem, 56%);
+  background:
+    linear-gradient(90deg, transparent 0 62%, rgb(5 7 13 / 0.95) 100%),
+    url("/experience-character-transparent.png") bottom left / contain no-repeat;
+  filter: saturate(0.98) contrast(1.04) drop-shadow(1rem 1.1rem 0 rgb(239 35 55 / 0.16));
+}
+
+.experience-art::after {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, transparent 45%, rgb(5 7 13 / 0.82)),
+    radial-gradient(circle at 34% 38%, transparent 0 28%, rgb(5 7 13 / 0.48) 72%);
+  content: "";
+}
+
+.experience-detail-copy {
+  position: relative;
+  z-index: 2;
+  max-width: 36rem;
+  margin-left: min(31rem, 48%);
+  padding: clamp(2rem, 4vw, 3.25rem);
+}
+
+.experience-detail-title {
+  font-size: clamp(2rem, 3.3vw, 3rem);
+  overflow-wrap: anywhere;
+}
+
+.experience-card-stack {
+  display: grid;
+  gap: 1rem;
+}
+
+.experience-select-card {
+  position: relative;
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  gap: 0.55rem;
+  height: 10.75rem;
+  border: 1px solid rgb(255 255 255 / 0.08);
+  border-radius: 1.6rem;
+  background: #11131a;
+  padding: 1.35rem 4.25rem 1.35rem 1.45rem;
+  text-align: left;
+  color: white;
+  box-shadow:
+    0 0.8rem 1.6rem rgb(0 0 0 / 0.18),
+    inset 0 0 0 1px rgb(255 255 255 / 0.03);
+  cursor: pointer;
+  transition:
+    background 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.experience-select-card:nth-child(2n) {
+  background: #ef2337;
+  color: #05070d;
+}
+
+.experience-select-card.selected {
+  background: #c8ff1a;
+  color: #05070d;
+  box-shadow:
+    0 1.4rem 2.4rem rgb(0 0 0 / 0.22),
+    0 0 0 0.35rem rgb(200 255 26 / 0.16);
+  transform: translateY(-0.55rem);
+}
+
+.experience-select-card:hover {
+  transform: translateY(-0.35rem);
+}
+
+.experience-select-card.selected:hover {
+  transform: translateY(-0.55rem);
+}
+
+.experience-card-kicker {
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.experience-card-title {
+  max-width: 18rem;
+  font-size: 1.35rem;
+  font-weight: 1000;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.experience-card-description {
+  max-width: 22rem;
+  overflow: hidden;
+  display: -webkit-box;
+  font-size: 0.82rem;
+  font-weight: 700;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  line-height: 1.45;
+  opacity: 0.68;
+}
+
+.experience-card-number {
+  position: absolute;
+  top: 1.1rem;
+  right: 1.1rem;
+  display: grid;
+  width: 2.4rem;
+  height: 2.4rem;
+  place-items: center;
+  border-radius: 999px;
+  background: rgb(5 7 13 / 0.82);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 900;
+}
+
+.experience-select-card.selected .experience-card-number {
+  background: #05070d;
+}
+
+.social-poster-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.social-poster {
+  position: relative;
+  display: block;
+  min-height: 34rem;
+  overflow: hidden;
+  border: 1px solid rgb(5 7 13 / 0.22);
+  background: #f2f0ee;
+  color: #05070d;
+  text-decoration: none;
+  box-shadow:
+    0 1.4rem 2.6rem rgb(0 0 0 / 0.16),
+    inset 0 0 0 1px rgb(255 255 255 / 0.7);
+  transition:
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.social-poster::before {
+  position: absolute;
+  inset: 4.7rem 1.9rem 7rem;
+  border-radius: 0.55rem;
+  background:
+    linear-gradient(135deg, rgb(239 35 55 / 0.92), rgb(239 35 55 / 0.64)),
+    repeating-linear-gradient(90deg, rgb(255 255 255 / 0.12) 0 1px, transparent 1px 16px);
+  content: "";
+}
+
+.social-poster::after {
+  position: absolute;
+  right: 1.4rem;
+  bottom: 5.1rem;
+  width: 8rem;
+  height: 8rem;
+  background-image: radial-gradient(circle, rgb(255 255 255 / 0.48) 0 0.18rem, transparent 0.2rem);
+  background-size: 0.9rem 0.9rem;
+  content: "";
+}
+
+.social-poster:hover {
+  box-shadow:
+    0 1.8rem 3rem rgb(0 0 0 / 0.2),
+    0 0 0 0.35rem rgb(239 35 55 / 0.12);
+  transform: translateY(-0.45rem);
+}
+
+.social-poster-top {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  justify-content: space-between;
+  padding: 1.3rem 1.45rem 0;
+  font-size: 0.62rem;
+  font-weight: 1000;
+  letter-spacing: 0.12em;
+}
+
+.social-poster-top span:first-child::before {
+  display: inline-block;
+  width: 0.75rem;
+  height: 0.75rem;
+  margin-right: 0.35rem;
+  border-radius: 999px;
+  background: #ef2337;
+  content: "";
+  vertical-align: -0.1rem;
+}
+
+.social-poster h3 {
+  position: absolute;
+  top: 5rem;
+  left: 1.55rem;
+  z-index: 5;
+  max-width: 90%;
+  color: white;
+  font-size: clamp(2.25rem, 4.9vw, 3rem);
+  font-weight: 1000;
+  line-height: 0.86;
+  text-transform: uppercase;
+  text-shadow: 0.08em 0.08em 0 rgb(5 7 13 / 0.78);
+}
+
+.social-character {
+  position: absolute;
+  right: -1.2rem;
+  bottom: 5.6rem;
+  z-index: 4;
+  width: 70%;
+  height: 61%;
+  background:
+    radial-gradient(circle at 50% 18%, #efc0a8 0 2.8rem, transparent 2.85rem),
+    radial-gradient(ellipse at 48% 58%, #05070d 0 7.2rem, transparent 7.3rem),
+    linear-gradient(135deg, transparent 0 36%, #f8fafc 37% 52%, transparent 53%);
+  filter: drop-shadow(-0.8rem 0.9rem 0 rgb(5 7 13 / 0.22));
+}
+
+.social-character::before {
+  position: absolute;
+  top: 5.2rem;
+  left: 45%;
+  width: 8rem;
+  height: 11rem;
+  border-radius: 2rem 2rem 6rem 6rem;
+  background: linear-gradient(135deg, #f8fafc, #a9b3be);
+  content: "";
+  transform: translateX(-50%) rotate(-16deg);
+}
+
+.social-character::after {
+  position: absolute;
+  top: 4.4rem;
+  left: 45%;
+  width: 13rem;
+  height: 7rem;
+  border: 0.55rem solid #05070d;
+  border-bottom: 0;
+  border-radius: 8rem 8rem 0 0;
+  content: "";
+  transform: translateX(-50%) rotate(-12deg);
+}
+
+.social-poster-panel {
+  position: absolute;
+  right: 1.35rem;
+  bottom: 7rem;
+  z-index: 6;
+  width: min(13rem, 56%);
+  border-radius: 0.9rem;
+  background: #f8fafc;
+  padding: 1rem;
+  box-shadow: 0 0.8rem 1.5rem rgb(0 0 0 / 0.18);
+}
+
+.social-poster-panel p {
+  font-size: 0.72rem;
+  font-weight: 800;
+  line-height: 1.4;
+  color: rgb(5 7 13 / 0.58);
+}
+
+.social-poster-panel span {
+  display: block;
+  margin-top: 0.8rem;
+  font-size: 0.72rem;
+  font-weight: 1000;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.social-poster-footer {
+  position: absolute;
+  right: 1.4rem;
+  bottom: 1.2rem;
+  left: 1.4rem;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: #ef2337;
+  font-size: 0.68rem;
+  font-weight: 1000;
+  letter-spacing: 0.12em;
+}
+
+.social-poster-footer span:last-child {
+  height: 0.7rem;
+  flex: 1;
+  background:
+    linear-gradient(90deg, #ef2337 0 70%, transparent 70%),
+    repeating-linear-gradient(90deg, #ef2337 0 0.45rem, transparent 0.45rem 0.75rem);
+}
+
+.social-poster-2 {
+  background: #05070d;
+  color: white;
+}
+
+.social-poster-2 .social-character {
+  right: -0.8rem;
+  bottom: 4.8rem;
+  width: 78%;
+  height: 73%;
+  background: url("/social-instagram-character-transparent.png") bottom right / contain no-repeat;
+  filter: drop-shadow(-0.8rem 0.9rem 0 rgb(5 7 13 / 0.2));
+}
+
+.social-poster-2 .social-character::before,
+.social-poster-2 .social-character::after {
+  content: none;
+  display: none;
+}
+
+.social-poster-1 .social-character {
+  right: -0.8rem;
+  bottom: 4.8rem;
+  width: 78%;
+  height: 73%;
+  background: url("/social-linkedin-character-transparent.png") bottom right / contain no-repeat;
+  filter: drop-shadow(-0.8rem 0.9rem 0 rgb(5 7 13 / 0.2));
+}
+
+.social-poster-1 .social-character::before,
+.social-poster-1 .social-character::after {
+  content: none;
+  display: none;
+}
+
+.social-poster-2::before {
+  background: #ef2337;
+}
+
+.social-poster-2 .social-poster-panel {
+  background: #ef2337;
+  color: #05070d;
+}
+
+.social-poster-2 .social-poster-panel p {
+  color: rgb(5 7 13 / 0.68);
+}
+
+.social-poster-3 {
+  background: #c6ced6;
+}
+
+.social-poster-3 .social-character {
+  right: -0.8rem;
+  bottom: 4.8rem;
+  width: 78%;
+  height: 73%;
+  background: url("/social-github-character-transparent.png") bottom right / contain no-repeat;
+  filter: drop-shadow(-0.8rem 0.9rem 0 rgb(5 7 13 / 0.2));
+}
+
+.social-poster-3 .social-character::before,
+.social-poster-3 .social-character::after {
+  content: none;
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .social-poster-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .experience-console {
+    grid-template-columns: minmax(0, 1.25fr) minmax(20rem, 0.75fr);
+  }
+
+  .experience-card-stack {
+    align-content: center;
+  }
+}
+
+@media (max-width: 1023px) {
+  .experience-art {
+    width: 100%;
+    opacity: 0.28;
+  }
+
+  .experience-detail-copy {
+    margin-left: 0;
+  }
+}
+
 @media (min-width: 1024px) {
   .tech-stage {
     margin-left: clamp(10rem, 19vw, 18rem);
